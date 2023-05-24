@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
+
 class ProjectSeeder extends Seeder
 {
     /**
@@ -14,13 +15,17 @@ class ProjectSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-        for($i=0; $i <5; $i++){
-            $newProj= new Project();
-            $newProj->title = $faker->sentence(5);
-            $newProj->description = $faker->sentence(90);
+
+        $poesie = config('poesie');
+        foreach ($poesie as $poesia)
+             {
+            $newProj = new Project();
+            $newProj->title =$poesia['titolo'];
             $newProj->slug = Str::slug($newProj->title, '-');
+            $newProj->author=$poesia['autore'];
+            $newProj->description = $poesia['testo'];
             $newProj->save();
 
         }

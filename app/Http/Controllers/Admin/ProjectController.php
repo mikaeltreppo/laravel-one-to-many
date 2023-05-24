@@ -53,7 +53,8 @@ class ProjectController extends Controller
         $newProject->title = $form_data['title'];
         $newProject->description = $form_data['description'];
         $newProject->slug=Str::slug($form_data['title']);
-        $newProject->type_id=$form_data['type_id'] ;    
+        $newProject->type_id=$form_data['type_id'] ;  
+        $newProject->author=$form_data['author'] ; 
         $newProject->save();
 
         return redirect()->route('admin.projects.show',['project'=> $newProject->id]);

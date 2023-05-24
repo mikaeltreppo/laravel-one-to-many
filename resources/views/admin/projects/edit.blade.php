@@ -26,7 +26,7 @@
 
             </div>
 
-            <button type="submit" class="btn btn-warning">Modifica</button>
+            <button type="submit" class="btn btn-outline-warning">Modifica</button>
         </form>
     </div>
 @endsection
