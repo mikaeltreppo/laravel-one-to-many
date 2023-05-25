@@ -8,7 +8,7 @@
         <div class="card-body">
           <h5 class="card-title">{{$project->title}}</h5>
           <p class="card-text user-select-all font-monospace">{{$project->description}}</p>
-        <!--  <p class="card-text">7\\$project->type->title}}</p>-->
+        <p class="card-text">{{$project->type?$project->type->title:"Nessun tipo"}}</p>
           <a href="{{route('admin.projects.index')}}" class="btn btn-outline-primary">Torna ai Progetti</a>
         </div>
       </div>

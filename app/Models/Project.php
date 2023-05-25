@@ -17,6 +17,6 @@ class Project extends Model
     ];
     public function type()
     {
-        return $this->belongsTo(Type::class, 'foreign_key');
+        return $this->belongsTo(Type::class);
     }
 }

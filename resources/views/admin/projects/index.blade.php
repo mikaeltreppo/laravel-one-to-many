@@ -24,7 +24,7 @@
         <th scope="row">{{$proj->title}}</th>
         <td>{{$proj->author}}</td>
         <td class="text-center font-monospace">{{$proj->description}}</td>
-        <td>{{$proj->type_id}}</td>
+        <td>{{$proj->type?$proj->type->title:"Nessuna Tipologia"}}</td>
         <td> 
           <a href="{{route('admin.projects.show', ['project' => $proj->id])}}" class="btn btn-outline-primary m-2">Apri</a> 
           <a href="{{route('admin.projects.edit', ['project' => $proj->id])}}" class="btn btn-outline-warning m-2">Modifica</a> 
